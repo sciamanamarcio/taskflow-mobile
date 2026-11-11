@@ -1,0 +1,23 @@
+version: 2
+updates:
+  # Expo, React Native and React are upgraded together with each Expo SDK
+  # (npx expo install --fix), so Dependabot leaves them alone.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "expo*"
+      - dependency-name: "react"
+      - dependency-name: "react-native*"
+      - dependency-name: "@types/react"
+      - dependency-name: "typescript"
+      - dependency-name: "jest*"
+      - dependency-name: "eslint*"
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
