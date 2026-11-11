@@ -1,13 +1,6 @@
 {
   "name": "taskflow-mobile",
-  "description": "The Blank project template includes the minimum dependencies to run and an empty root component.",
-  "license": "0BSD",
-  "version": "58.0.33",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/expo/expo.git",
-    "directory": "templates/expo-template-blank-typescript"
-  },
+  "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {
     "@tanstack/react-query": "^5.107.1",
@@ -34,6 +27,17 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
+  "private": true,
+  "jest": {
+    "preset": "jest-expo",
+    "setupFiles": [
+      "./jest.setup.ts"
+    ],
+    "testTimeout": 20000
   }
 }
